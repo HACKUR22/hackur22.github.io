@@ -21,8 +21,8 @@ const config = {
     },
     about: {
         title: "About Me",
-        description: "Founder of <span class='highlight'>Creators Hub</span>, pushing the boundaries of your industry. Specializing in your key skills and offerings.",
-        mission: "Your mission statement goes here.",
+        description: "Founder of <span class='highlight'>Creators Hub</span>,this hub focuses on DEVELOPMENT. MY SKILLS ARE :.",
+        mission: "MISSION HACKER.",
         techStack: ["MINECRAFT SERVER DEVELOPMENT", "GTA V MODDING", "DISCORD SERVER DEVELOPMENT" , "DISCORD BOT DEVELOPMENT"]
     },
     skills: {
