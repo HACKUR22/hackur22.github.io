@@ -43,19 +43,19 @@ const config = {
                 title: "Idle System",
                 description: "A ALL IN ONE DISCORD BOT CODED IN PYTHON.",
                 image: "idlesystem.gif",
-                link: "https://discord.gg/NXVwSPfjbE"
+                link: "https://discord.gg/ctsgumtMxq"
             },
             {
                 title: "MINECRAFT SERVER LOBBY",
                 description: "A CUSTOM LOBBY BASED ON NETHER AND END THEME.",
                 image: "lobby.png",
-                link: "https://discord.gg/NXVwSPfjbE"
+                link: "https://discord.gg/ctsgumtMxq"
             },
             {
                 title: "LIFESTEAL SETUP",
                 description: "A MINECRAFT LIFESTEAL SERVER SETUP.",
                 image: "lssetup.png",
-                link: "https://discord.gg/NXVwSPfjbE"
+                link: "https://discord.gg/ctsgumtMxq"
             }
             // Add more projects as needed
         ]
