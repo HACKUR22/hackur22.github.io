@@ -1,0 +1,166 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #20202a;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out;
+}
+
+/* Content initially hidden */
+.header,
+.contact-container {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out 0.3s; /* Added delay for smooth reveal */
+}
+
+/* Visible when loaded */
+body.loaded .header,
+body.loaded .contact-container {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.header h1 {
+    color: #00f0ff;
+    font-size: 4rem;
+    text-shadow: 0 0 15px #00f0ff, 0 0 30px rgba(0, 240, 255, 0.8);
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* ... (keep existing contact card styles the same) ... */
+
+/* Enhanced Loading Circle */
+.loading-circle {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(243, 243, 243, 0.1); /* More subtle initial border */
+    border-top: 5px solid #00f0ff;
+    border-radius: 50%;
+    animation: 
+        spin 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite,
+        fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    opacity: 0;
+    visibility: visible;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    0% { 
+        opacity: 0;
+        border-width: 2px;
+    }
+    100% { 
+        opacity: 1;
+        border-width: 5px;
+    }
+}
+
+body.loaded .loading-circle {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%) scale(1.2);
+    border-color: rgba(0, 240, 255, 0.1);
+}
+
+.header h1 {
+    color: #00f0ff; /* Neon blue text */
+    font-size: 4rem; /* Larger size for header */
+    text-shadow: 0 0 15px #00f0ff, 0 0 30px rgba(0, 240, 255, 0.8); /* Glowing effect */
+}
+  
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px; /* Add space below the header */
+}
+  
+.contact-card {
+    background-color: rgba(32, 32, 42, 0.8); /* Semi-transparent */
+    border: 2px solid #00f0ff; /* Neon border */
+    border-radius: 15px;
+    width: 260px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(32, 32, 42, 0.8); /* Light glow around cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+  
+.contact-card:hover {
+    transform: translateY(-10px); /* Lifted hover effect */
+    box-shadow: 0 0 40px rgba(0, 240, 255, 0.6); /* Brighter glow on hover */
+}
+  
+.icon-bg {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
+    background-color: #20202a; /* Darker circle background */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5); /* Neon glow */
+}
+  
+.icon-bg img {
+    width: 50px; /* Icon size */
+    height: 50px;
+    object-fit: contain;
+}
+  
+.contact-card h3 {
+    color: #00f0ff; /* Neon blue text */
+    font-size: 1.5rem; /* Slightly larger */
+    text-shadow: 0 0 10px #00f0ff, 0 0 20px rgba(0, 240, 255, 0.8); /* Neon glow */
+}
+  
+.contact-card a {
+    color: #fff; /* Default white text */
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+  
+.contact-card a:hover {
+    color: #00f0ff; /* Neon blue hover text */
+    text-shadow: 0 0 10px #00f0ff, 0 0 25px rgba(0, 240, 255, 0.9); /* Glow on hover */
+}
+  
+@media (max-width: 800px) {
+    .contact-card {
+        width: 100%; /* Stack cards in smaller viewports */
+    }
+}
